@@ -4,5 +4,33 @@ Analysis on Kickstarter data to reveal trends
 ![Ratings per Category Outcomes Chart 631](https://user-images.githubusercontent.com/88383836/131024207-dac64120-7b62-4f3b-a617-d81e1ffeafa6.png)
 
 # Kickstarter Challenge Analysis
-![Theater_Outcomes_vs_Launch](https://user-images.githubusercontent.com/88383836/131701354-29152bf5-8982-4258-aead-c0fd7c8cdca3.png)
-![Outcomes Based on Goal](https://user-images.githubusercontent.com/88383836/131701374-906d26a2-b796-499a-ac68-7db7b731c56d.png)
+
+## Overview of Project 
+This project provides data and thorough analysis of trends that affect the outcome of theater campaigns. 
+
+### Purpose
+Louise wants to know how different theater campaigns fared in relation to their launch dates and their funding goals. The purpose of this analysis is to provide Louise with data to help for future theater campaigns.
+
+## Analysis and Challenges 
+
+### Analysis of Outcomes Based on Launch Date
+![Theater_Outcomes_vs_Launch](https://user-images.githubusercontent.com/88383836/131701354-29152bf5-8982-4258-aead-c0fd7c8cdca3.png) (A1)
+
+![Theater outcomes based on launch date table](https://user-images.githubusercontent.com/88383836/131717713-922a28e4-ea5d-4d4e-bf5b-e4b0e99f7570.PNG) (A2)
+
+To begin this analysis, I opened the Kickstarter data worksheet, and created a column named Years. The formula used to generate the data for the “Years” column is YEAR(). Inside the argument for this formula is the data from the “Data Created Conversion” column (S Column) (Ex. YEAR(S2)). This gives our analysis the ability to show the start year for each campaign. 
+
+Next step I developed a Pivot Table (A2) to filter the data to produce outcomes based on launch date. The table was created by placing the “parent category” and “years” into filters, placing the “date created conversion” into rows, and placing the “outcomes” into values and Legend. In the columns label section of the table “successful”, “failed”, and “canceled” must be selected. The table now has all the necessary data to create a Pivot Chart. The line graph will provide the best visualization for this data set since there are multiple outcomes being evaluated. The product is the chart A1 and properly displays the outcomes based on launch monthly launch date.
+
+
+### Analysis of Outcomes Based on Goals 
+![Outcomes Based on Goal](https://user-images.githubusercontent.com/88383836/131701374-906d26a2-b796-499a-ac68-7db7b731c56d.png) (B1) 
+
+![Outcomes based on goals chart](https://user-images.githubusercontent.com/88383836/131718716-9df439f9-1862-4c9e-b209-d9d5f8c94d0e.PNG) (B2) 
+
+To begin this analysis, I created a table that consists of the following data Goal, Number Successful, Number Failed, Number Canceled, Total Projects, Percentage Successful, Percentage Failed, and Percentage Canceled of the subcategory “plays”. To produce the values within the Number Successful, Number Failed, Number Canceled columns I used the formula COUNTIFS(). Inside the argument I placed all the criteria needed from the Kickstarter data set to display the corresponding data into each column (Ex. =COUNTIFS(Kickstarter!$D:$D,">1000",Kickstarter!$F:$F,"successful",Kickstarter!$R:$R,"plays")). The example argument shows all the criteria that is evaluated in the formula. The formula was then manipulated to produce the values based on the goal criteria (row) and which outcome type (column).  
+
+From the data provided in the Number Successful, Number Failed, Number Canceled columns I generated the total sum from all categories using SUM() and placed that in the Total Projects column. Subsequently I used the results from each individual outcome column divided by the Total Projects to create the Percentage Successful, Percentage Failed, and Percentage Canceled calculations. These were the steps used to create the B2 table. 
+
+The final step was to produce the line graph to show the Outcomes Based on Goal. I selected my data set then went to the “Insert” tab and in the charts section I selected line graph. I then adjusted the data in the graph to only show the percentage outcomes column (y-axis) to the corresponding goals row (x-axis). The product is the B1 chart and properly displays the outcomes based on goal. 
+
